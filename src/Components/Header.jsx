@@ -1,12 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCrow } from "@fortawesome/free-solid-svg-icons"
-
+import SearchBar from "./SearchBar"
 export default function Header() {
   return (
     <div className="header">
       <div className="logo">
-        <FontAwesomeIcon icon={faCrow} size="2x" />
+        <FontAwesomeIcon icon={faCrow} size="2x" className="logo-icon" />
         <h2>BirdCheck</h2>
+      </div>
+      <SearchBar></SearchBar>
+      <div className="navigation">
+        <button id="home">Home</button>
+        <button id="home">My List</button>
       </div>
     </div>
   )

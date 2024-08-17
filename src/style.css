@@ -38,3 +38,25 @@ body {
   gap: 20px;
   padding: 20px;
 }
+
+.logo-icon {
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.navigation button {
+  padding: 0.7em 1.4em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-color: #525252;
+  background-color: #fbbf24;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
