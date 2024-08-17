@@ -1,5 +1,11 @@
+import Header from "./Components/Header"
+import "./style.css"
 function App() {
-  return <>BirdCheck</>
+  return (
+    <>
+      <Header></Header>
+    </>
+  )
 }
 
 export default App
