@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCrow } from "@fortawesome/free-solid-svg-icons"
 import SearchBar from "./SearchBar"
+import { Link } from "react-router-dom"
+
 export default function Header() {
   return (
     <div className="header">
@@ -10,8 +12,12 @@ export default function Header() {
       </div>
       <SearchBar></SearchBar>
       <div className="navigation">
-        <button id="home">Home</button>
-        <button id="home">My List</button>
+        <Link to="/">
+          <button id="home">Home</button>
+        </Link>
+        <Link to="/my-list">
+          <button id="home">My List</button>
+        </Link>
       </div>
     </div>
   )
