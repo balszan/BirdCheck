@@ -42,7 +42,7 @@ export default function BirdList() {
       <h2 className="title">Recent Bird Sightings in the UK:</h2>
       <div className="birdlist-container">
         {birds.map((bird) => (
-          <BirdCard bird={bird} />
+          <BirdCard key={bird.subId} bird={bird} />
         ))}
       </div>
     </>

@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom"
 import Header from "../Components/Header"
 
-export default function BirdProfile() {
+export default function BirdProfile({ bird }) {
   return (
     <>
       <Header></Header>
-      <Outlet />
+      <h4>{bird.comName}</h4>
+      <img src={bird.imageUrl}></img>
     </>
   )
 }

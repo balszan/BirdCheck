@@ -1,9 +1,13 @@
 import Header from "../Components/Header"
-export default function MyList() {
+import MyListItem from "../Components/MyListItem"
+
+export default function MyList({ myBirds }) {
   return (
     <>
       <Header></Header>
-      My List will go here
+      {myBirds.map((bird) => {
+        return <MyListItem key={bird.subId} />
+      })}
     </>
   )
 }

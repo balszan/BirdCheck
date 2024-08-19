@@ -16,7 +16,7 @@ export default function Header() {
           <button id="home">Home</button>
         </Link>
         <Link to="/my-list">
-          <button id="home">My List</button>
+          <button id="my-list">My List</button>
         </Link>
       </div>
     </div>
