@@ -130,3 +130,38 @@ body {
 .icon-button {
   margin-right: 10px;
 }
+
+.bird-profile {
+  background-color: #fde68a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  margin: 30px;
+  width: 400px;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  color: #164e63;
+  text-align: center;
+}
+
+.bird-profile img {
+  padding: 30px;
+}
+
+.bird-profile-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.bird-profile button {
+  padding: 10px;
+  margin: 20px 10px 10px 10px;
+  border-radius: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-color: #525252;
+  background-color: #06b6d4;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
