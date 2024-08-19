@@ -1,6 +1,9 @@
 import Header from "../Components/Header"
+import { useLocation } from "react-router-dom"
 
-export default function BirdProfile({ bird }) {
+export default function BirdProfile() {
+  const location = useLocation()
+  const bird = location.state?.bird
   return (
     <>
       <Header></Header>

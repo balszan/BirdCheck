@@ -1,3 +1,3 @@
-export default function MyListItem() {
-  return <>List item here</>
+export default function MyListItem({ bird }) {
+  return <>{bird}</>
 }

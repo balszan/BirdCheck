@@ -1,12 +1,14 @@
 import { fetchBirds } from "../Services/eBirdApi"
 import { getBirdImage } from "../Services/flickrApi"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import BirdCard from "./BirdCard"
+import { BirdContext } from "../App"
 
 export default function BirdList() {
   const [birds, setBirds] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const { myBirds, setMyBirds } = useContext(BirdContext)
 
   useEffect(() => {
     async function getBirds() {
@@ -42,7 +44,7 @@ export default function BirdList() {
       <h2 className="title">Recent Bird Sightings in the UK:</h2>
       <div className="birdlist-container">
         {birds.map((bird) => (
-          <BirdCard key={bird.subId} bird={bird} />
+          <BirdCard key={bird.sciName} bird={bird} />
         ))}
       </div>
     </>
