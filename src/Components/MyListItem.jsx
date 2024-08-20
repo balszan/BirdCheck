@@ -1,14 +1,18 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useEffect } from "react"
 
-export default function MyListItem({ bird }) {
-  const myBirds = JSON.parse(localStorage.getItem("My Birds"))
+export default function MyListItem({ bird, myBirds, setMyBirds }) {
+  useEffect(() => {
+    setMyBirds(JSON.parse(localStorage.getItem("My Birds")))
+  }, [])
 
-  const deleteBird = (bird) => {
-    const updatedBirds = myBirds.filter((b) => {
-      b.sciName !== bird.sciName
-    })
-    localStorage.setItem("My Birds", updatedBirds)
+  const deleteBird = (birdToDelete) => {
+    const updatedBirds = myBirds.filter(
+      (b) => b.sciName !== birdToDelete.sciName
+    )
+    localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
+    setMyBirds(updatedBirds)
   }
 
   return (

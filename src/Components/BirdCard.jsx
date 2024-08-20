@@ -5,20 +5,17 @@ import { Link } from "react-router-dom"
 
 export default function BirdCard({ bird }) {
   const addBird = () => {
-    setMyBirds((prevBirds) => {
-      const storedBirdsString = localStorage.getItem("My Birds")
-      const storedBirds = storedBirdsString ? JSON.parse(storedBirdsString) : []
-      const birdExists = storedBirds.some(
-        (storedBird) => storedBird.sciName === bird.sciName
-      )
-      if (!birdExists) {
-        const updatedBirds = [...storedBirds, bird]
-        localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
-        return updatedBirds
-      }
-      return prevBirds
-    })
+    const storedBirdsString = localStorage.getItem("My Birds")
+    const storedBirds = storedBirdsString ? JSON.parse(storedBirdsString) : []
+    const birdExists = storedBirds.some(
+      (storedBird) => storedBird.sciName === bird.sciName
+    )
+    if (!birdExists) {
+      const updatedBirds = [...storedBirds, bird]
+      localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
+    }
   }
+
   return (
     <div key={bird.subId} className="birdcard">
       <h4>{bird.comName}</h4>

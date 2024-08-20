@@ -1,14 +1,30 @@
 import Header from "../Components/Header"
 import MyListItem from "../Components/MyListItem"
+import { useEffect, useState } from "react"
 
 export default function MyList() {
-  const myBirds = JSON.parse(localStorage.getItem("My Birds"))
+  const [myBirds, setMyBirds] = useState([])
+
+  useEffect(() => {
+    const storedBirds = localStorage.getItem("My Birds")
+    if (storedBirds) {
+      setMyBirds(JSON.parse(storedBirds))
+    }
+  }, [])
+
   return (
     <>
       <Header></Header>
       {myBirds ? (
         myBirds.map((bird) => {
-          return <MyListItem key={bird.sciName} bird={bird} />
+          return (
+            <MyListItem
+              key={bird.sciName}
+              bird={bird}
+              myBirds={myBirds}
+              setMyBirds={setMyBirds}
+            />
+          )
         })
       ) : (
         <p className="information">No Birds added yet.</p>
