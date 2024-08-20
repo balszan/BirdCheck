@@ -13,10 +13,17 @@ export default function BirdProfile() {
 
   const addBird = () => {
     setMyBirds((prevBirds) => {
-      const storedBirds = JSON.parse(localStorage.getItem("My Birds"))
-      const updatedBirds = [...storedBirds, ...prevBirds, bird]
-      localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
-      return updatedBirds
+      const storedBirdsString = localStorage.getItem("My Birds")
+      const storedBirds = storedBirdsString ? JSON.parse(storedBirdsString) : []
+      const birdExists = storedBirds.some(
+        (storedBird) => storedBird.sciName === bird.sciName
+      )
+      if (!birdExists) {
+        const updatedBirds = [...storedBirds, bird]
+        localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
+        return updatedBirds
+      }
+      return prevBirds
     })
   }
 

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { BirdContext } from "../App"
 import { Link } from "react-router-dom"
 
@@ -10,10 +10,17 @@ export default function BirdCard({ bird }) {
 
   const addBird = () => {
     setMyBirds((prevBirds) => {
-      const storedBirds = JSON.parse(localStorage.getItem("My Birds"))
-      const updatedBirds = [...storedBirds, ...prevBirds, bird]
-      localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
-      return updatedBirds
+      const storedBirdsString = localStorage.getItem("My Birds")
+      const storedBirds = storedBirdsString ? JSON.parse(storedBirdsString) : []
+      const birdExists = storedBirds.some(
+        (storedBird) => storedBird.sciName === bird.sciName
+      )
+      if (!birdExists) {
+        const updatedBirds = [...storedBirds, bird]
+        localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
+        return updatedBirds
+      }
+      return prevBirds
     })
   }
 
