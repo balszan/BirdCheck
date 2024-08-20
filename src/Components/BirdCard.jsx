@@ -1,13 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
-import { useContext } from "react"
-import { BirdContext } from "../App"
 import { Link } from "react-router-dom"
 
 export default function BirdCard({ bird }) {
-  const { myBirds, setMyBirds } = useContext(BirdContext)
-
   const addBird = () => {
     setMyBirds((prevBirds) => {
       const storedBirdsString = localStorage.getItem("My Birds")
@@ -23,7 +19,6 @@ export default function BirdCard({ bird }) {
       return prevBirds
     })
   }
-
   return (
     <div key={bird.subId} className="birdcard">
       <h4>{bird.comName}</h4>

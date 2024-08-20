@@ -1,6 +1,16 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 export default function MyListItem({ bird }) {
+  const myBirds = JSON.parse(localStorage.getItem("My Birds"))
+
+  const deleteBird = (bird) => {
+    const updatedBirds = myBirds.filter((b) => {
+      b.sciName !== bird.sciName
+    })
+    localStorage.setItem("My Birds", updatedBirds)
+  }
+
   return (
     <div key={bird.subId} className="birdlist-item">
       <div className="birdlist-left">
@@ -12,7 +22,7 @@ export default function MyListItem({ bird }) {
         <p>
           Spotted on {bird.obsDt} in {bird.locName}
         </p>
-        <button id="trash">
+        <button id="trash" onClick={() => deleteBird(bird)}>
           <FontAwesomeIcon icon={faTrash} />
         </button>
         <button id="addNote">Add Note</button>

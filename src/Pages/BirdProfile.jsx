@@ -2,25 +2,24 @@ import Header from "../Components/Header"
 import { useLocation } from "react-router-dom"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useContext } from "react"
-import { BirdContext } from "../App.jsx"
 
 export default function BirdProfile() {
   const location = useLocation()
   const bird = location.state?.bird
 
-  const { myBirds, setMyBirds } = useContext(BirdContext)
-
   const addBird = () => {
     setMyBirds((prevBirds) => {
-      const storedBirdsString = localStorage.getItem("My Birds")
-      const storedBirds = storedBirdsString ? JSON.parse(storedBirdsString) : []
-      const birdExists = storedBirds.some(
+      const birdExists = prevBirds.some(
         (storedBird) => storedBird.sciName === bird.sciName
       )
       if (!birdExists) {
-        const updatedBirds = [...storedBirds, bird]
-        localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
+        const updatedBirds = [...prevBirds, bird]
+        const storedBirdsString = localStorage.getItem("My Birds")
+        const storedBirds = storedBirdsString
+          ? JSON.parse(storedBirdsString)
+          : []
+        const newStoredBirds = [...storedBirds, bird]
+        localStorage.setItem("My Birds", JSON.stringify(newStoredBirds))
         return updatedBirds
       }
       return prevBirds
