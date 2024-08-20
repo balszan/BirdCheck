@@ -5,7 +5,7 @@ import { createContext, useState } from "react"
 
 export const BirdContext = createContext({
   myBirds: [],
-  addBird: () => {},
+  setMyBirds: () => {},
 })
 
 function App() {

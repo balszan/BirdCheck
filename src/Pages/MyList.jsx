@@ -1,16 +1,18 @@
-import { BirdContext } from "../App"
 import Header from "../Components/Header"
 import MyListItem from "../Components/MyListItem"
-import { useContext } from "react"
 
 export default function MyList() {
-  const { myBirds, setMyBirds } = useContext(BirdContext)
+  const myBirds = JSON.parse(localStorage.getItem("My Birds"))
   return (
     <>
       <Header></Header>
-      {myBirds.map((bird) => {
-        return <MyListItem key={bird.sciName} bird={bird} />
-      })}
+      {myBirds ? (
+        myBirds.map((bird) => {
+          return <MyListItem key={bird.sciName} bird={bird} />
+        })
+      ) : (
+        <p className="information">No Birds added yet.</p>
+      )}
     </>
   )
 }

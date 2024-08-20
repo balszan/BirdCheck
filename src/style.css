@@ -141,8 +141,20 @@ body {
   margin: 30px;
   width: 400px;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
-  color: #164e63;
   text-align: center;
+}
+
+.bird-profile h2 {
+  border: 2px solid #525252;
+  margin-bottom: 10px;
+  border-radius: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-color: #525252;
+  background-color: #fbbf24;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  padding: 10px;
 }
 
 .bird-profile img {
@@ -163,5 +175,50 @@ body {
   color: #ffffff;
   border-color: #525252;
   background-color: #06b6d4;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+.information {
+  text-align: center;
+  margin: 30px;
+}
+
+.birdlist-item {
+  background-color: #a5f3fc;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+}
+
+.birdlist-right {
+  margin-left: 20px;
+  position: relative;
+  width: 100%;
+}
+
+#trash {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  margin: 20px 10px 10px 10px;
+  border-radius: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-color: #525252;
+  background-color: #fb7185;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+#addNote {
+  padding: 10px;
+  margin: 20px 10px 10px 10px;
+  border-radius: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-color: #525252;
+  background-color: #fbbf24;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
 }

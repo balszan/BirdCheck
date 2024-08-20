@@ -1,9 +1,11 @@
 import { createRoot } from "react-dom/client"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from "./App.jsx"
 import BirdProfile from "./Pages/BirdProfile.jsx"
 import MyList from "./Pages/MyList.jsx"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import PageNotFound from "./Pages/PageNotFound.jsx"
+import { BirdContext } from "./App.jsx"
+import { useState } from "react"
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,13 @@ const router = createBrowserRouter([
   },
 ])
 
-createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router}></RouterProvider>
-)
+function Main() {
+  const [myBirds, setMyBirds] = useState([])
+
+  return (
+    <BirdContext.Provider value={{ myBirds, setMyBirds }}>
+      <RouterProvider router={router} />
+    </BirdContext.Provider>
+  )
+}
+createRoot(document.getElementById("root")).render(<Main />)
