@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react"
 
 export default function MyListItem({ bird, myBirds, setMyBirds }) {
   const [note, setNote] = useState("")
+  const [buttonOption, setButtonOption] = useState("Add note")
   const dialogRef = useRef(null)
 
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function MyListItem({ bird, myBirds, setMyBirds }) {
           : chosenBird
       )
     )
+    setButtonOption("Edit note")
   }
 
   const toggleDialog = () => {
@@ -61,7 +63,7 @@ export default function MyListItem({ bird, myBirds, setMyBirds }) {
           <FontAwesomeIcon icon={faTrash} />
         </button>
         <button id="addNote" onClick={toggleDialog}>
-          Add Note
+          {buttonOption}
         </button>
       </div>
       <dialog className="add-note" ref={dialogRef}>
@@ -74,7 +76,7 @@ export default function MyListItem({ bird, myBirds, setMyBirds }) {
             onChange={(e) => setNote(e.target.value)}
           ></textarea>
           <button id="add-note" onClick={() => handleAddNote(bird)}>
-            Add
+            DONE
           </button>
           <button id="close-note">X</button>
         </form>
