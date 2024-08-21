@@ -65,6 +65,7 @@ body {
   text-align: center;
   padding: 10px;
   font-size: 1.2em;
+  color: #333;
 }
 
 .birdlist-container {
@@ -125,6 +126,7 @@ body {
 .error {
   text-align: center;
   padding: 30px;
+  color: #333;
 }
 
 .icon-button {
@@ -181,6 +183,7 @@ body {
 .information {
   text-align: center;
   margin: 30px;
+  color: #333;
 }
 
 .birdlist-item {
@@ -221,4 +224,50 @@ body {
   border-color: #525252;
   background-color: #fbbf24;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+.add-note {
+  background-color: #fde68a;
+  text-align: center;
+  height: 330px;
+  width: 300px;
+  z-index: 10;
+  border-radius: 0.15em;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  border-color: #525252;
+}
+
+.add-note h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#add-note {
+  padding: 10px;
+  margin: 5px;
+  color: #ffffff;
+  border-color: #525252;
+  background-color: #fbbf24;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  border-radius: 0.15em;
+}
+
+#close-note {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  margin-right: 5px;
+  margin-top: 5px;
+  border-radius: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-color: #525252;
+  background-color: #fb7185;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+.user-notes {
+  font-style: italic;
 }

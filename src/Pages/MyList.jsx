@@ -15,15 +15,18 @@ export default function MyList() {
   return (
     <>
       <Header></Header>
+
       {myBirds ? (
         myBirds.map((bird) => {
           return (
-            <MyListItem
-              key={bird.sciName}
-              bird={bird}
-              myBirds={myBirds}
-              setMyBirds={setMyBirds}
-            />
+            <>
+              <MyListItem
+                key={bird.sciName}
+                bird={bird}
+                myBirds={myBirds}
+                setMyBirds={setMyBirds}
+              />
+            </>
           )
         })
       ) : (
