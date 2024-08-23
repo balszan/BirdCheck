@@ -1,9 +1,12 @@
+import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCrow } from "@fortawesome/free-solid-svg-icons"
 import SearchBar from "./SearchBar"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 export default function Header({ search, setSearch }) {
+  const location = useLocation()
+
   return (
     <div className="header">
       <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
@@ -12,7 +15,9 @@ export default function Header({ search, setSearch }) {
           <h2>BirdCheck</h2>
         </div>
       </Link>
-      <SearchBar search={search} setSearch={setSearch}></SearchBar>
+      {location.pathname === "/" && (
+        <SearchBar search={search} setSearch={setSearch} />
+      )}
       <div className="navigation">
         <Link to="/">
           <button id="home">Home</button>
