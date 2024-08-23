@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react"
 
 export default function MyListItem({ bird, myBirds, setMyBirds }) {
   const [note, setNote] = useState("")
-  const [buttonOption, setButtonOption] = useState("Add note")
+  const [buttonOption, setButtonOption] = useState("Add Note")
   const dialogRef = useRef(null)
 
   useEffect(() => {
