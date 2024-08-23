@@ -16,7 +16,11 @@ export default function Header({ search, setSearch }) {
         </div>
       </Link>
       {location.pathname === "/" && (
-        <SearchBar search={search} setSearch={setSearch} />
+        <SearchBar
+          search={search}
+          setSearch={setSearch}
+          className="searchbar"
+        />
       )}
       <div className="navigation">
         <Link to="/">

@@ -56,8 +56,8 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
-  border-color: #525252;
-  background-color: #fbbf24;
+  background-color: #f59e0b;
+  border: none;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
 }
 
@@ -104,6 +104,7 @@ body {
 
 .birdcard button {
   padding: 10px;
+  border: none;
   margin: 5px;
   border-radius: 0.15em;
   text-decoration: none;
@@ -118,7 +119,6 @@ body {
 }
 
 .birdcard h4 {
-  border: 2px solid #525252;
   margin-bottom: 10px;
   border-radius: 0.15em;
   text-decoration: none;
@@ -155,7 +155,6 @@ body {
 }
 
 .bird-profile h2 {
-  border: 2px solid #525252;
   margin-bottom: 10px;
   border-radius: 0.15em;
   text-decoration: none;
@@ -177,6 +176,7 @@ body {
 }
 
 .bird-profile button {
+  border: none;
   padding: 10px;
   margin: 20px 10px 10px 10px;
   border-radius: 0.15em;
@@ -221,7 +221,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
-  border-color: #525252;
+  border: none;
   background-color: #fb7185;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
 }
@@ -233,7 +233,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
-  border-color: #525252;
+  border: none;
   background-color: #fbbf24;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
 }
@@ -310,5 +310,11 @@ body {
 @media screen and (max-width: 600px) {
   #trash {
     position: static;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    height: fit-content;
+    justify-content: center;
   }
 }
