@@ -3,9 +3,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyin
 import { useState } from "react"
 import { fetchBirds } from "../Services/eBirdApi"
 
-export default function SearchBar() {
-  const [search, setSearch] = useState("")
-
+export default function SearchBar({ search, setSearch }) {
   const handleSearch = async (search) => {
     setSearch(search)
     fetchBirds(search)

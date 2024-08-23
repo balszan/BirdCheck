@@ -3,7 +3,7 @@ import { getBirdImage } from "../Services/flickrApi"
 import { useState, useEffect } from "react"
 import BirdCard from "./BirdCard"
 
-export default function BirdList() {
+export default function BirdList({ search, setSearch }) {
   const [birds, setBirds] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -29,6 +29,30 @@ export default function BirdList() {
     }
     getBirds()
   }, [])
+
+  useEffect(() => {
+    if (search !== null) {
+      async function getFilteredBirds() {
+        try {
+          setLoading(true)
+          const data = await fetchBirds(search)
+          const birdsWithImages = await Promise.all(
+            data.map(async (bird) => {
+              const imageUrl = await getBirdImage(bird.comName)
+              return { ...bird, imageUrl }
+            })
+          )
+          setBirds(birdsWithImages)
+        } catch (error) {
+          setError("Failed to get birds")
+          console.error(error)
+        } finally {
+          setLoading(false)
+        }
+      }
+      getFilteredBirds()
+    }
+  }, [search])
 
   if (loading) {
     return <div className="loading"> Loading ... </div>
