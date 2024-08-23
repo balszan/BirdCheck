@@ -167,7 +167,8 @@ body {
 
 .bird-profile-wrapper {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .bird-profile button {
@@ -302,6 +303,16 @@ body {
   margin-top: 20px;
 }
 
+.profile-map {
+  width: 600px;
+  height: 450px;
+  margin-bottom: 40px;
+}
+
+.profile-map h2 {
+  text-align: center;
+  padding: 10px;
+}
 @media screen and (max-width: 600px) {
   #trash {
     position: static;

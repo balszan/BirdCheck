@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState } from "react"
+import BirdMap from "../Components/BirdMap"
 
 export default function BirdProfile() {
   const location = useLocation()
@@ -43,7 +44,7 @@ export default function BirdProfile() {
             <h4 className="added-notification">Added!</h4>
           )}
         </div>
-        <div className="profile-map">Map will go here</div>
+        <BirdMap bird={bird}></BirdMap>
       </div>
     </>
   )
