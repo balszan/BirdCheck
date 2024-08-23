@@ -43,6 +43,7 @@ export default function BirdProfile() {
             <h4 className="added-notification">Added!</h4>
           )}
         </div>
+        <div className="profile-map">Map will go here</div>
       </div>
     </>
   )
