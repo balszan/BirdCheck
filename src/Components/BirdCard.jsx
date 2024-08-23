@@ -1,9 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-import { faCheck } from "@fortawesome/free-solid-svg-icons"
+import { faCheck, faSquareCheck } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
 export default function BirdCard({ bird }) {
+  const [birdAdded, setBirdAdded] = useState(false)
+
   const addBird = () => {
     const storedBirdsString = localStorage.getItem("My Birds")
     const storedBirds = storedBirdsString ? JSON.parse(storedBirdsString) : []
@@ -14,6 +17,7 @@ export default function BirdCard({ bird }) {
       const updatedBirds = [...storedBirds, bird]
       localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
     }
+    setBirdAdded(true)
   }
 
   return (
@@ -27,10 +31,12 @@ export default function BirdCard({ bird }) {
             Learn More
           </button>
         </Link>
-        <button onClick={addBird}>
-          <FontAwesomeIcon icon={faCheck} className="icon-button" />
-          Add
-        </button>
+        {!birdAdded && (
+          <button onClick={addBird}>
+            <FontAwesomeIcon icon={faCheck} className="icon-button" />
+            Add
+          </button>
+        )}
       </div>
     </div>
   )

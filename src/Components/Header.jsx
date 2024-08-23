@@ -6,10 +6,12 @@ import { Link } from "react-router-dom"
 export default function Header({ search, setSearch }) {
   return (
     <div className="header">
-      <div className="logo">
-        <FontAwesomeIcon icon={faCrow} size="2x" className="logo-icon" />
-        <h2>BirdCheck</h2>
-      </div>
+      <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <div className="logo">
+          <FontAwesomeIcon icon={faCrow} size="2x" className="logo-icon" />
+          <h2>BirdCheck</h2>
+        </div>
+      </Link>
       <SearchBar search={search} setSearch={setSearch}></SearchBar>
       <div className="navigation">
         <Link to="/">

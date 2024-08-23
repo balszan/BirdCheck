@@ -61,6 +61,10 @@ body {
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
 }
 
+.navigation button:hover {
+  background-color: #fcd34d;
+}
+
 .title {
   text-align: center;
   padding: 10px;
@@ -107,6 +111,10 @@ body {
   color: #ffffff;
   background-color: #06b6d4;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+.birdcard button:hover {
+  background-color: #22d3ee;
 }
 
 .birdcard h4 {
@@ -178,6 +186,10 @@ body {
   border-color: #525252;
   background-color: #06b6d4;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+.bird-profile button:hover {
+  background-color: #22d3ee;
 }
 
 .information {
@@ -289,4 +301,8 @@ body {
 
 .searchbar-input:focus {
   outline: none;
+}
+
+.added-notification {
+  margin-top: 20px;
 }
