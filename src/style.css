@@ -306,3 +306,9 @@ body {
 .added-notification {
   margin-top: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  #trash {
+    position: static;
+  }
+}
