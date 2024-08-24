@@ -1,3 +1,4 @@
+/* Reset and base styles */
 * {
   box-sizing: border-box;
 }
@@ -23,6 +24,7 @@ body {
   color: #3f3f46;
 }
 
+/* Header styles */
 .header {
   background-color: #facc15;
   display: flex;
@@ -30,12 +32,12 @@ body {
   align-items: center;
   color: white;
   height: 100px;
+  padding: 0 20px;
 }
 
 .logo {
   display: flex;
   gap: 20px;
-  padding: 20px;
 }
 
 .logo-icon {
@@ -45,12 +47,10 @@ body {
 .navigation {
   display: flex;
   gap: 20px;
-  padding: 20px;
 }
 
 .navigation button {
   padding: 0.7em 1.4em;
-  margin: 0 0.3em 0.3em 0;
   border-radius: 0.15em;
   text-decoration: none;
   text-transform: uppercase;
@@ -58,12 +58,14 @@ body {
   background-color: #f59e0b;
   border: none;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  cursor: pointer;
 }
 
 .navigation button:hover {
   background-color: #fcd34d;
 }
 
+/* Title and container styles */
 .title {
   text-align: center;
   padding: 10px;
@@ -75,10 +77,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   gap: 20px;
+  padding: 20px;
 }
 
+/* Bird card styles */
 .birdcard {
   background-color: #e2e8f0;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
@@ -109,6 +112,7 @@ body {
   color: #ffffff;
   background-color: #06b6d4;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  cursor: pointer;
 }
 
 .birdcard button:hover {
@@ -121,12 +125,12 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
-  border-color: #525252;
   background-color: #fbbf24;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
   padding: 10px;
 }
 
+/* Loading, error and information styles */
 .loading,
 .error {
   text-align: center;
@@ -138,6 +142,13 @@ body {
   margin-right: 10px;
 }
 
+.information {
+  text-align: center;
+  margin: 30px;
+  color: #333;
+}
+
+/* Bird profile styles */
 .bird-profile {
   background-color: white;
   display: flex;
@@ -155,7 +166,6 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
-  border-color: #525252;
   background-color: #fbbf24;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
   padding: 10px;
@@ -179,20 +189,16 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
-  border-color: #525252;
   background-color: #06b6d4;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  cursor: pointer;
 }
 
 .bird-profile button:hover {
   background-color: #22d3ee;
 }
 
-.information {
-  text-align: center;
-  margin: 30px;
-  color: #333;
-}
+/* Bird list item styles */
 
 .birdlist-item {
   background-color: #f1f5f9;
@@ -220,6 +226,7 @@ body {
   border: none;
   background-color: #fb7185;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  cursor: pointer;
 }
 
 #addNote {
@@ -232,8 +239,10 @@ body {
   border: none;
   background-color: #fbbf24;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  cursor: pointer;
 }
 
+/* Add note dialog styles */
 .add-note {
   background-color: #fde68a;
   text-align: center;
@@ -242,7 +251,7 @@ body {
   z-index: 10;
   border-radius: 0.15em;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
-  border-color: #525252;
+  border: 1px solid #525252;
 }
 
 .add-note h2 {
@@ -254,32 +263,33 @@ body {
   padding: 10px;
   margin: 5px;
   color: #ffffff;
-  border-color: #525252;
   background-color: #fbbf24;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
   border-radius: 0.15em;
+  border: none;
+  cursor: pointer;
 }
 
 #close-note {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
   padding: 10px;
-  margin-right: 5px;
-  margin-top: 5px;
   border-radius: 0.15em;
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
-  border-color: #525252;
   background-color: #fb7185;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  border: none;
+  cursor: pointer;
 }
 
 .user-notes {
   font-style: italic;
 }
 
+/* Search bar styles */
 .searchbar {
   display: flex;
   align-items: center;
@@ -289,7 +299,6 @@ body {
 .searchbar-input {
   padding: 5px;
   margin: 5px;
-  border-color: #525252;
   background-color: #fde68a;
   border-radius: 0.15em;
   border: none;
@@ -303,6 +312,7 @@ body {
   margin-top: 20px;
 }
 
+/* Profile map styles */
 .profile-map {
   width: 600px;
   height: 450px;
@@ -319,6 +329,7 @@ body {
   padding: 20px;
 }
 
+/* Media queries */
 @media screen and (max-width: 600px) {
   #trash {
     position: static;
