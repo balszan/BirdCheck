@@ -26,12 +26,12 @@ export default function BirdProfile() {
   return (
     <>
       <Header></Header>
-      <div className="bird-profile-wrapper">
-        <div className="bird-profile">
+      <main className="bird-profile-wrapper">
+        <article className="bird-profile">
           <h2>{bird.comName}</h2>
           <h4>{bird.sciName}</h4>
 
-          <img src={bird.imageUrl}></img>
+          <img src={bird.imageUrl} alt={bird.comName}></img>
           <p>
             Spotted on {bird.obsDt} in {bird.locName}
           </p>
@@ -43,9 +43,9 @@ export default function BirdProfile() {
           ) : (
             <h4 className="added-notification">Added!</h4>
           )}
-        </div>
+        </article>
         <BirdMap bird={bird}></BirdMap>
-      </div>
+      </main>
     </>
   )
 }

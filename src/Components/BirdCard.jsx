@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-import { faCheck, faSquareCheck } from "@fortawesome/free-solid-svg-icons"
+import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 
@@ -21,23 +21,34 @@ export default function BirdCard({ bird }) {
   }
 
   return (
-    <div key={bird.subId} className="birdcard">
+    <article key={bird.subId} className="birdcard">
       <h4>{bird.comName}</h4>
-      <img src={bird.imageUrl}></img>
+      <img src={bird.imageUrl} alt={bird.comName}></img>
       <div className="birdcard-buttons">
         <Link to={`/bird/${bird.sciName}`} state={{ bird: bird }}>
-          <button>
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="icon-button" />
+          <button aria-label={`Learn more about ${bird.comName}`}>
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              aria-hidden="true"
+              className="icon-button"
+            />
             Learn More
           </button>
         </Link>
         {!birdAdded && (
-          <button onClick={addBird}>
-            <FontAwesomeIcon icon={faCheck} className="icon-button" />
+          <button
+            onClick={addBird}
+            aria-label={`Add ${bird.comName} to your list`}
+          >
+            <FontAwesomeIcon
+              icon={faCheck}
+              className="icon-button"
+              aria-hidden="true"
+            />
             Add
           </button>
         )}
       </div>
-    </div>
+    </article>
   )
 }

@@ -3,12 +3,13 @@ import "leaflet/dist/leaflet.css"
 
 export default function BirdMap({ bird }) {
   return (
-    <div className="profile-map">
+    <section className="profile-map">
       <h2>Spotted here: </h2>
       <MapContainer
         center={[bird.lat, bird.lng]}
         zoom={13}
         style={{ height: "400px", width: "100%" }}
+        aria-label={`Map showing ${bird.comName} sighting location`}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -20,6 +21,6 @@ export default function BirdMap({ bird }) {
           </Popup>
         </Marker>
       </MapContainer>
-    </div>
+    </section>
   )
 }

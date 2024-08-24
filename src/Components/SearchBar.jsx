@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyingGlass"
-import { useState } from "react"
 import { fetchBirds } from "../Services/eBirdApi"
 
 export default function SearchBar({ search, setSearch }) {
@@ -17,7 +16,7 @@ export default function SearchBar({ search, setSearch }) {
         value={search}
         onChange={(e) => handleSearch(e.target.value)}
       ></input>
-      <FontAwesomeIcon icon={faMagnifyingGlass} />
+      <FontAwesomeIcon icon={faMagnifyingGlass} aria-hidden="true" />
     </div>
   )
 }

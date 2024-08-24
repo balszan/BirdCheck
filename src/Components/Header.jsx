@@ -1,4 +1,3 @@
-import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCrow } from "@fortawesome/free-solid-svg-icons"
 import SearchBar from "./SearchBar"
@@ -8,10 +7,15 @@ export default function Header({ search, setSearch }) {
   const location = useLocation()
 
   return (
-    <div className="header">
+    <header className="header">
       <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
         <div className="logo">
-          <FontAwesomeIcon icon={faCrow} size="2x" className="logo-icon" />
+          <FontAwesomeIcon
+            icon={faCrow}
+            size="2x"
+            className="logo-icon"
+            aria-hidden="true"
+          />
           <h2>BirdCheck</h2>
         </div>
       </Link>
@@ -22,14 +26,14 @@ export default function Header({ search, setSearch }) {
           className="searchbar"
         />
       )}
-      <div className="navigation">
+      <nav className="navigation">
         <Link to="/">
           <button id="home">Home</button>
         </Link>
         <Link to="/my-list">
           <button id="my-list">My List</button>
         </Link>
-      </div>
-    </div>
+      </nav>
+    </header>
   )
 }

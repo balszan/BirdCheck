@@ -13,25 +13,26 @@ export default function MyList() {
   }, [])
 
   return (
-    <>
+    <main>
       <Header></Header>
-
-      {myBirds ? (
-        myBirds.map((bird) => {
-          return (
-            <>
-              <MyListItem
-                key={bird.sciName}
-                bird={bird}
-                myBirds={myBirds}
-                setMyBirds={setMyBirds}
-              />
-            </>
-          )
-        })
-      ) : (
-        <p className="information">No Birds added yet.</p>
-      )}
-    </>
+      <section aria-label="Your added birds">
+        {myBirds ? (
+          myBirds.map((bird) => {
+            return (
+              <>
+                <MyListItem
+                  key={bird.sciName}
+                  bird={bird}
+                  myBirds={myBirds}
+                  setMyBirds={setMyBirds}
+                />
+              </>
+            )
+          })
+        ) : (
+          <p className="information">No Birds added yet.</p>
+        )}
+      </section>
+    </main>
   )
 }

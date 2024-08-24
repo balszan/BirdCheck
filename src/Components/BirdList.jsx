@@ -55,20 +55,28 @@ export default function BirdList({ search, setSearch }) {
   }, [search])
 
   if (loading) {
-    return <div className="loading"> Loading ... </div>
+    return (
+      <div aria-live="polite" className="loading">
+        Loading ...
+      </div>
+    )
   }
   if (error) {
-    return <div className="error"> Error: {error} </div>
+    return (
+      <div aria-live="assertive" className="error">
+        Error: {error}
+      </div>
+    )
   }
 
   return (
-    <>
+    <section aria-label="Recent Bird Sightings">
       <h2 className="title">Recent Bird Sightings in the UK:</h2>
-      <div className="birdlist-container">
+      <div className="birdlist-container" role="list">
         {birds.map((bird) => (
-          <BirdCard key={bird.sciName} bird={bird} />
+          <BirdCard key={bird.sciName} role="listitem" bird={bird} />
         ))}
       </div>
-    </>
+    </section>
   )
 }

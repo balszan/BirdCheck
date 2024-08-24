@@ -48,9 +48,9 @@ export default function MyListItem({ bird, myBirds, setMyBirds }) {
   }
 
   return (
-    <div key={bird.subId} className="birdlist-item">
+    <article key={bird.subId} className="birdlist-item">
       <div className="birdlist-left">
-        <img src={bird.imageUrl}></img>
+        <img src={bird.imageUrl} alt={bird.comName}></img>
       </div>
       <div className="birdlist-right">
         <h3>{bird.comName}</h3>
@@ -59,7 +59,11 @@ export default function MyListItem({ bird, myBirds, setMyBirds }) {
           Spotted on {bird.obsDt} in {bird.locName}
         </p>
         <Note bird={bird}></Note>
-        <button id="trash" onClick={() => deleteBird(bird)}>
+        <button
+          id="trash"
+          onClick={() => deleteBird(bird)}
+          aria-label={`Delete ${bird.comName} from your list`}
+        >
           <FontAwesomeIcon icon={faTrash} />
         </button>
         <button id="addNote" onClick={toggleDialog}>
@@ -81,6 +85,6 @@ export default function MyListItem({ bird, myBirds, setMyBirds }) {
           <button id="close-note">X</button>
         </form>
       </dialog>
-    </div>
+    </article>
   )
 }
