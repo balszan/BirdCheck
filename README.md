@@ -1,6 +1,6 @@
 # BirdCheck
 
-
+<img width="1327" alt="Screenshot 2024-08-25 at 11 30 23" src="https://github.com/user-attachments/assets/d2ef44bd-487a-4f90-a413-64e9dc3c104e">
 
 BirdCheck allows the user to view recent bird sightings in the UK, including maps for each species. It also lets the user keep track of their own sightings and take notes on them.
 
@@ -16,7 +16,7 @@ BirdCheck meets W3C validation standards and incorporates accessibility best pra
 
 ## Contact
 
-Karolina Balszan - kbalszan@gmail.com
+Karolina Balszan - kbalszan@gmail.com <br/>
 [My LinkedIn Profile](https://www.linkedin.com/in/karolina-balszan/)
 
 Happy birdwatching!
