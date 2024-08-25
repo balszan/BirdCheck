@@ -1,6 +1,6 @@
 # BirdCheck
 
-[GIF HERE]
+
 
 BirdCheck allows the user to view recent bird sightings in the UK, including maps for each species. It also lets the user keep track of their own sightings and take notes on them.
 
