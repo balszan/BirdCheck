@@ -8,7 +8,20 @@ export default function MyList() {
   useEffect(() => {
     const storedBirds = localStorage.getItem("My Birds")
     if (storedBirds) {
-      setMyBirds(JSON.parse(storedBirds))
+      try {
+        const parsedBirds = JSON.parse(storedBirds)
+        if (Array.isArray(parsedBirds)) {
+          setMyBirds(parsedBirds)
+        } else {
+          console.error("Stored birds is not an array")
+          setMyBirds([])
+        }
+      } catch (error) {
+        console.error("Error parsing stored birds", error)
+        setMyBirds([])
+      }
+    } else {
+      setMyBirds([])
     }
   }, [])
 

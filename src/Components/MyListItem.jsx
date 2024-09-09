@@ -1,29 +1,31 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useCallback, useRef } from "react"
 
 export default function MyListItem({ bird, myBirds, setMyBirds }) {
   const [note, setNote] = useState("")
   const [addNoteButton, setAddNoteButton] = useState(true)
   const dialogRef = useRef(null)
 
-  useEffect(() => {
-    setMyBirds(JSON.parse(localStorage.getItem("My Birds")))
-  }, [])
+  const updateBirds = useCallback(
+    (updatedBirds) => {
+      setMyBirds(updatedBirds)
+      localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
+    },
+    [setMyBirds]
+  )
 
   useEffect(() => {
-    localStorage.setItem("My Birds", JSON.stringify(myBirds))
     setAddNoteButton(!bird.notes)
-  }, [myBirds, bird.notes])
+  }, [bird.notes])
 
   const handleAddNote = () => {
-    setMyBirds((prevBirds) =>
-      prevBirds.map((chosenBird) =>
-        bird.sciName === chosenBird.sciName
-          ? { ...chosenBird, notes: note }
-          : chosenBird
-      )
+    const updatedBirds = myBirds.map((chosenBird) =>
+      bird.sciName === chosenBird.sciName
+        ? { ...chosenBird, notes: note }
+        : chosenBird
     )
+    updateBirds(updatedBirds)
   }
 
   const toggleDialog = () => {
@@ -39,8 +41,7 @@ export default function MyListItem({ bird, myBirds, setMyBirds }) {
     const updatedBirds = myBirds.filter(
       (b) => b.sciName !== birdToDelete.sciName
     )
-    localStorage.setItem("My Birds", JSON.stringify(updatedBirds))
-    setMyBirds(updatedBirds)
+    updateBirds(updatedBirds)
   }
 
   function Note({ bird }) {
