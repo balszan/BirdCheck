@@ -10,7 +10,7 @@ export async function fetchBirds(search) {
         "X-eBirdApiToken": API_KEY,
       },
       params: {
-        maxResults: 100,
+        maxResults: 50,
       },
     })
     if (!search) {

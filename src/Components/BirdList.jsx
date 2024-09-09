@@ -71,7 +71,9 @@ export default function BirdList({ search, setSearch }) {
 
   return (
     <section aria-label="Recent Bird Sightings">
-      <h2 className="title">Recent Bird Sightings in the UK:</h2>
+      <h2 className="title">
+        Bird sightings in the UK within the last 24 hours:
+      </h2>
       <div className="birdlist-container" role="list">
         {birds.map((bird) => (
           <BirdCard key={bird.sciName} role="listitem" bird={bird} />

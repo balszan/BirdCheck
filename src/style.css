@@ -339,6 +339,15 @@ body {
     flex-wrap: wrap;
     height: fit-content;
     justify-content: center;
+    padding: 10px;
+  }
+
+  .logo {
+    padding: 10px;
+  }
+
+  .navigation {
+    padding-bottom: 10px;
   }
 
   .birdlist-item {
